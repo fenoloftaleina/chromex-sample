@@ -10,3 +10,4 @@
 /.tmp
 .figwheel_server.log
 .chrome-profile
+.DS_Store
