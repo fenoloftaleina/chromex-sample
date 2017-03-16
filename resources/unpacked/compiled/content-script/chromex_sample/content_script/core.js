@@ -4,9 +4,9 @@ goog.require('cljs.core');
 goog.require('cljs.core.constants');
 goog.require('sonja.loader');
 chromex_sample.content_script.core.init_BANG_ = (function chromex_sample$content_script$core$init_BANG_(){
-var G__12030 = (function (){
+var G__11145 = (function (){
 return sonja.loader.set_hover_events_for_img_tags();
 });
-var G__12031 = (1000);
-return setInterval(G__12030,G__12031);
+var G__11146 = (1000);
+return setInterval(G__11145,G__11146);
 });

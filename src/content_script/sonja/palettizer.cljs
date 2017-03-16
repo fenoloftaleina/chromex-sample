@@ -84,3 +84,15 @@
           (loop-it context data current-points future-points w h (inc i))
           (loop-it context data future-points (new-positions future-points w h) w h 0)))
       20)))
+
+(defn run [context width height]
+  (let [edge-points [[0 0] [width 0] [width height] [0 height]]
+        rand-points (concat edge-points (map (fn [] [(rand-int width) (rand-int height)]) (range 20)))]
+    (loop-it
+      context
+      (.-data (get-image-data context width height))
+      rand-points
+      (new-positions rand-points width height)
+      width
+      height
+      0)))
