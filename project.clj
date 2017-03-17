@@ -9,7 +9,8 @@
 
   :plugins [[lein-cljsbuild "1.1.5"]
             [lein-shell "0.5.0"]
-            [lein-environ "1.1.0"]]
+            [lein-environ "1.1.0"]
+            [lein-kibit "0.1.3"]]
 
   :source-paths ["src/content_script"]
 
