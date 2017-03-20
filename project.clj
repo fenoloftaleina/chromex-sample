@@ -22,7 +22,7 @@
   :profiles {:unpacked-content-script
              {:cljsbuild {:builds
                           {:content-script
-                           {:source-paths ["src/content_script/chromex_sample"]
+                           {:source-paths ["src/content_script"]
                             :compiler     {:output-to     "resources/unpacked/compiled/content-script/main.js"
                                            :output-dir    "resources/unpacked/compiled/content-script"
                                            :asset-path    "compiled/content-script"
