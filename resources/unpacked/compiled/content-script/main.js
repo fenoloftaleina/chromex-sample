@@ -3582,6 +3582,23 @@ $cljs$core$map$$.$cljs$lang$applyTo$ = function($G__11929_seq11927$$) {
   return $cljs$core$map$$.$cljs$core$IFn$_invoke$arity$variadic$($G__11928$$, $G__11929_seq11927$$, $G__11930_seq11927__$1$$, $G__11931_seq11927__$2$$, $seq11927__$3_seq11927__$4$$);
 };
 $cljs$core$map$$.$cljs$lang$maxFixedArity$ = 4;
+function $cljs$core$take$cljs$0core$0IFn$0_invoke$0arity$02$$($n$jscomp$89$$, $coll$jscomp$251$$) {
+  if ("number" !== typeof $n$jscomp$89$$) {
+    throw Error("Assert failed: (number? n)");
+  }
+  return new $cljs$core$LazySeq$$(null, function() {
+    if (0 < $n$jscomp$89$$) {
+      var $temp__6753__auto__$jscomp$5$$ = $cljs$core$seq$$($coll$jscomp$251$$);
+      return $temp__6753__auto__$jscomp$5$$ ? $cljs$core$cons$$($cljs$core$first$$($temp__6753__auto__$jscomp$5$$), $cljs$core$take$cljs$0core$0IFn$0_invoke$0arity$02$$($n$jscomp$89$$ - 1, $cljs$core$rest$$($temp__6753__auto__$jscomp$5$$))) : null;
+    }
+    return null;
+  }, null, null);
+}
+function $cljs$core$repeatedly$cljs$0core$0IFn$0_invoke$0arity$01$$($f$jscomp$197$$) {
+  return new $cljs$core$LazySeq$$(null, function() {
+    return $cljs$core$cons$$($f$jscomp$197$$.$cljs$core$IFn$_invoke$arity$0$ ? $f$jscomp$197$$.$cljs$core$IFn$_invoke$arity$0$() : $f$jscomp$197$$.call(null), $cljs$core$repeatedly$cljs$0core$0IFn$0_invoke$0arity$01$$($f$jscomp$197$$));
+  }, null, null);
+}
 function $cljs$core$mapcat$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($f$jscomp$201$$, $colls$jscomp$5$$) {
   return $cljs$core$apply$cljs$0core$0IFn$0_invoke$0arity$02$$($cljs$core$concat$$, $cljs$core$apply$cljs$0core$0IFn$0_invoke$0arity$03$$($cljs$core$map$$, $f$jscomp$201$$, $colls$jscomp$5$$));
 }
@@ -6709,9 +6726,10 @@ $cljs$core$List$$.prototype.$cljs$core$IPrintWithWriter$$ = $cljs$core$PROTOCOL_
 $cljs$core$List$$.prototype.$cljs$core$IPrintWithWriter$_pr_writer$arity$3$ = function($coll$jscomp$707$$, $writer$jscomp$45$$, $opts$jscomp$44$$) {
   return $cljs$core$pr_sequential_writer$$($writer$jscomp$45$$, $cljs$core$pr_writer$$, "(", " ", ")", $opts$jscomp$44$$, this);
 };
-var $cljs$core$cst$0kw$0y$$ = new $cljs$core$Keyword$$(null, "y", "y", -1757859776), $cljs$core$cst$0kw$0radius_DASH_squared$$ = new $cljs$core$Keyword$$(null, "radius-squared", "radius-squared", 555261953), $cljs$core$cst$0kw$0meta$$ = new $cljs$core$Keyword$$(null, "meta", "meta", 1499536964), $cljs$core$cst$0kw$0dup$$ = new $cljs$core$Keyword$$(null, "dup", "dup", 556298533), $cljs$core$cst$0kw$0points$$ = new $cljs$core$Keyword$$(null, "points", "points", -1486596883), $cljs$core$cst$0kw$0fallback_DASH_impl$$ = 
-new $cljs$core$Keyword$$(null, "fallback-impl", "fallback-impl", -1501286995), $cljs$core$cst$0kw$0flush_DASH_on_DASH_newline$$ = new $cljs$core$Keyword$$(null, "flush-on-newline", "flush-on-newline", -151457939), $cljs$core$cst$0kw$0readably$$ = new $cljs$core$Keyword$$(null, "readably", "readably", 1129599760), $cljs$core$cst$0kw$0more_DASH_marker$$ = new $cljs$core$Keyword$$(null, "more-marker", "more-marker", -14717935), $cljs$core$cst$0kw$0print_DASH_length$$ = new $cljs$core$Keyword$$(null, 
-"print-length", "print-length", 1931866356), $cljs$core$cst$0kw$0x$$ = new $cljs$core$Keyword$$(null, "x", "x", 2099068185), $cljs$core$cst$0kw$0alt_DASH_impl$$ = new $cljs$core$Keyword$$(null, "alt-impl", "alt-impl", 670969595), $cljs$core$cst$0kw$0edges$$ = new $cljs$core$Keyword$$(null, "edges", "edges", -694791395), $cljs$core$cst$0kw$0triangles$$ = new $cljs$core$Keyword$$(null, "triangles", "triangles", -1525417058);
+var $cljs$core$cst$0kw$0y$$ = new $cljs$core$Keyword$$(null, "y", "y", -1757859776), $cljs$core$cst$0kw$0radius_DASH_squared$$ = new $cljs$core$Keyword$$(null, "radius-squared", "radius-squared", 555261953), $cljs$core$cst$0kw$0meta$$ = new $cljs$core$Keyword$$(null, "meta", "meta", 1499536964), $cljs$core$cst$0kw$0dup$$ = new $cljs$core$Keyword$$(null, "dup", "dup", 556298533), $cljs$core$cst$0kw$0width$$ = new $cljs$core$Keyword$$(null, "width", "width", -384071477), $cljs$core$cst$0kw$0points$$ = 
+new $cljs$core$Keyword$$(null, "points", "points", -1486596883), $cljs$core$cst$0kw$0fallback_DASH_impl$$ = new $cljs$core$Keyword$$(null, "fallback-impl", "fallback-impl", -1501286995), $cljs$core$cst$0kw$0flush_DASH_on_DASH_newline$$ = new $cljs$core$Keyword$$(null, "flush-on-newline", "flush-on-newline", -151457939), $cljs$core$cst$0kw$0readably$$ = new $cljs$core$Keyword$$(null, "readably", "readably", 1129599760), $cljs$core$cst$0kw$0more_DASH_marker$$ = new $cljs$core$Keyword$$(null, "more-marker", 
+"more-marker", -14717935), $cljs$core$cst$0kw$0print_DASH_length$$ = new $cljs$core$Keyword$$(null, "print-length", "print-length", 1931866356), $cljs$core$cst$0kw$0context$$ = new $cljs$core$Keyword$$(null, "context", "context", -830191113), $cljs$core$cst$0kw$0x$$ = new $cljs$core$Keyword$$(null, "x", "x", 2099068185), $cljs$core$cst$0kw$0alt_DASH_impl$$ = new $cljs$core$Keyword$$(null, "alt-impl", "alt-impl", 670969595), $cljs$core$cst$0kw$0edges$$ = new $cljs$core$Keyword$$(null, "edges", "edges", 
+-694791395), $cljs$core$cst$0kw$0triangles$$ = new $cljs$core$Keyword$$(null, "triangles", "triangles", -1525417058), $cljs$core$cst$0kw$0height$$ = new $cljs$core$Keyword$$(null, "height", "height", 1025178622), $cljs$core$cst$0kw$0data$$ = new $cljs$core$Keyword$$(null, "data", "data", -232669377);
 function $clojure$set$union$cljs$0core$0IFn$0_invoke$0arity$02$$($s1$jscomp$4$$, $s2$jscomp$3$$) {
   return $cljs$core$count$$($s1$jscomp$4$$) < $cljs$core$count$$($s2$jscomp$3$$) ? $cljs$core$reduce$cljs$0core$0IFn$0_invoke$0arity$03$$($cljs$core$conj$$, $s2$jscomp$3$$, $s1$jscomp$4$$) : $cljs$core$reduce$cljs$0core$0IFn$0_invoke$0arity$03$$($cljs$core$conj$$, $s1$jscomp$4$$, $s2$jscomp$3$$);
 }
@@ -6850,222 +6868,239 @@ function $delaunay_triangulation$core$triangulate$$($points$jscomp$1_points__$1$
   }($points$jscomp$1_points__$1$$, $triangles$jscomp$2_vec__13763$$, $tl$jscomp$1$$, $tr$$, $bl$jscomp$1$$, $br$$, $initial$$, $with_bounds$$), $with_bounds$$);
   return new $cljs$core$PersistentArrayMap$$(null, 3, [$cljs$core$cst$0kw$0points$$, $points$jscomp$1_points__$1$$, $cljs$core$cst$0kw$0triangles$$, $triangles$jscomp$2_vec__13763$$, $cljs$core$cst$0kw$0edges$$, $cljs$core$distinct$cljs$0core$0IFn$0_invoke$0arity$01$$($cljs$core$mapcat$cljs$0core$0IFn$0_invoke$0arity$0variadic$$($delaunay_triangulation$core$edges$$, $cljs$core$array_seq$$([$triangles$jscomp$2_vec__13763$$], 0)))], null);
 }
-;function $sonja$palettizer$draw_triangles$$($context$$, $data$jscomp$35$$, $width$jscomp$12$$, $G__26034_seq__25929_seq__25929__$1_temp__6753__auto__$jscomp$32_triangles$jscomp$3$$) {
-  function $map_px$$($context$$, $data$jscomp$35$$) {
-    return 4 * $context$$ + 4 * $width$jscomp$12$$ * $data$jscomp$35$$;
-  }
-  var $color_avg_from_right_within_triangle_vertices$$ = function($context$$, $data$jscomp$35$$) {
-    return function($width$jscomp$12$$) {
+;function $sonja$palettizer$draw_triangles$$($p__14338$$, $triangles$jscomp$3$$) {
+  var $color_avg_from_right_within_triangle_vertices_map__14405__$1$$ = null != $p__14338$$ && ($p__14338$$.$cljs$lang$protocol_mask$partition0$$ & 64 || $cljs$core$PROTOCOL_SENTINEL$$ === $p__14338$$.$cljs$core$ISeq$$) ? $cljs$core$apply$cljs$0core$0IFn$0_invoke$0arity$02$$($cljs$core$hash_map$$, $p__14338$$) : $p__14338$$, $context$$ = $cljs$core$get$$.$cljs$core$IFn$_invoke$arity$2$($color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $cljs$core$cst$0kw$0context$$), $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$ = 
+  $cljs$core$get$$.$cljs$core$IFn$_invoke$arity$2$($color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $cljs$core$cst$0kw$0data$$), $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$ = $cljs$core$get$$.$cljs$core$IFn$_invoke$arity$2$($color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $cljs$core$cst$0kw$0width$$), $G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$ = function($p__14338$$, $triangles$jscomp$3$$, $color_avg_from_right_within_triangle_vertices_map__14405__$1$$, 
+  $context$$, $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$) {
+    return function($p__14338$$, $triangles$jscomp$3$$) {
+      return 4 * $p__14338$$ + 4 * $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$ * $triangles$jscomp$3$$;
+    };
+  }($p__14338$$, $color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $context$$, $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$, $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$), $color_avg_from_right_within_triangle_vertices_map__14405__$1$$ = function($p__14338$$, $triangles$jscomp$3$$, $color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $context$$, $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$, 
+  $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$, $G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$) {
+    return function($b_14527_i__14414_vec__14446_14524$$) {
       return $cljs$core$map$$.$cljs$core$IFn$_invoke$arity$2$(function() {
-        return function($context$$) {
-          return $context$$ / 3 | 0;
+        return function($p__14338$$) {
+          return $p__14338$$ / 3 | 0;
         };
-      }($context$$, $data$jscomp$35$$), $cljs$core$reduce$cljs$0core$0IFn$0_invoke$0arity$03$$(function() {
-        return function($context$$, $data$jscomp$35$$) {
-          return $cljs$core$map$$.$cljs$core$IFn$_invoke$arity$3$($cljs$core$_PLUS_$$, $context$$, $data$jscomp$35$$);
+      }($p__14338$$, $triangles$jscomp$3$$, $color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $context$$, $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$, $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$, $G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$), $cljs$core$reduce$cljs$0core$0IFn$0_invoke$0arity$03$$(function() {
+        return function($p__14338$$, $triangles$jscomp$3$$) {
+          return $cljs$core$map$$.$cljs$core$IFn$_invoke$arity$3$($cljs$core$_PLUS_$$, $p__14338$$, $triangles$jscomp$3$$);
         };
-      }($context$$, $data$jscomp$35$$), new $cljs$core$PersistentVector$$(null, 3, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [0, 0, 0], null), $cljs$core$map$$.$cljs$core$IFn$_invoke$arity$2$(function($context$$, $data$jscomp$35$$) {
-        return function($context$$) {
-          var $width$jscomp$12$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($context$$, 0, null);
-          $context$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($context$$, 1, null);
-          return $data$jscomp$35$$($width$jscomp$12$$ | 0, $context$$ | 0);
+      }($p__14338$$, $triangles$jscomp$3$$, $color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $context$$, $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$, $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$, $G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$), new $cljs$core$PersistentVector$$(null, 3, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [0, 0, 0], null), $cljs$core$map$$.$cljs$core$IFn$_invoke$arity$2$(function($p__14338$$, 
+      $triangles$jscomp$3$$) {
+        return function($p__14338$$) {
+          var $color_avg_from_right_within_triangle_vertices_map__14405__$1$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__14338$$, 0, null);
+          $p__14338$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($p__14338$$, 1, null);
+          return $triangles$jscomp$3$$($color_avg_from_right_within_triangle_vertices_map__14405__$1$$ | 0, $p__14338$$ | 0);
         };
-      }($context$$, $data$jscomp$35$$), $cljs$core$map$$.$cljs$core$IFn$_invoke$arity$2$(function($context$$, $data$jscomp$35$$) {
-        return function($width$jscomp$12$$) {
+      }($p__14338$$, $triangles$jscomp$3$$, $color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $context$$, $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$, $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$, $G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$), $cljs$core$map$$.$cljs$core$IFn$_invoke$arity$2$(function($p__14338$$, $triangles$jscomp$3$$, $color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $context$$, 
+      $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$, $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$, $G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$) {
+        return function($b_14527_i__14414_vec__14446_14524$$) {
           return $cljs$core$map$$.$cljs$core$IFn$_invoke$arity$2$(function() {
-            return function($context$$) {
-              return $context$$ - .01 | 0;
+            return function($p__14338$$) {
+              return $p__14338$$ - .01 | 0;
             };
-          }($context$$, $data$jscomp$35$$), $width$jscomp$12$$);
+          }($p__14338$$, $triangles$jscomp$3$$, $color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $context$$, $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$, $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$, $G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$), $b_14527_i__14414_vec__14446_14524$$);
         };
-      }($context$$, $data$jscomp$35$$), $width$jscomp$12$$))));
+      }($p__14338$$, $triangles$jscomp$3$$, $color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $context$$, $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$, $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$, $G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$), $b_14527_i__14414_vec__14446_14524$$))));
     };
-  }($map_px$$, function($context$$) {
-    return function($width$jscomp$12$$, $G__26034_seq__25929_seq__25929__$1_temp__6753__auto__$jscomp$32_triangles$jscomp$3$$) {
-      var $map_px$$ = $context$$($width$jscomp$12$$, $G__26034_seq__25929_seq__25929__$1_temp__6753__auto__$jscomp$32_triangles$jscomp$3$$);
-      return $cljs$core$mapv$cljs$0core$0IFn$0_invoke$0arity$02$$(function($context$$) {
-        return function($width$jscomp$12$$) {
-          return $data$jscomp$35$$[$context$$ + $width$jscomp$12$$];
+  }($G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$, function($p__14338$$, $triangles$jscomp$3$$, $color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $context$$, $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$, $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$) {
+    return function($G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$, $b_14527_i__14414_vec__14446_14524$$) {
+      var $G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$ = $p__14338$$($G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$, $b_14527_i__14414_vec__14446_14524$$);
+      return $cljs$core$mapv$cljs$0core$0IFn$0_invoke$0arity$02$$(function($p__14338$$, $triangles$jscomp$3$$, $color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $context$$, $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$, $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$) {
+        return function($triangles$jscomp$3$$) {
+          return $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$[$p__14338$$ + $triangles$jscomp$3$$];
         };
-      }($map_px$$, $context$$));
+      }($G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$, $p__14338$$, $triangles$jscomp$3$$, $color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $context$$, $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$, $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$));
     };
-  }($map_px$$));
+  }($G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$, $p__14338$$, $color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $context$$, $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$, $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$), $p__14338$$, $color_avg_from_right_within_triangle_vertices_map__14405__$1$$, $context$$, $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$, $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$);
   $context$$.strokeStyle = "#fff";
-  $G__26034_seq__25929_seq__25929__$1_temp__6753__auto__$jscomp$32_triangles$jscomp$3$$ = $cljs$core$seq$$($G__26034_seq__25929_seq__25929__$1_temp__6753__auto__$jscomp$32_triangles$jscomp$3$$);
-  for (var $G__26035_chunk__25930_r_26043_vec__25961_26039$$ = null, $G__26036_c__8279__auto__$jscomp$8_count__25931_g_26044$$ = 0, $b_26045_i__25932_vec__25964_26042$$ = 0;;) {
-    if ($b_26045_i__25932_vec__25964_26042$$ < $G__26036_c__8279__auto__$jscomp$8_count__25931_g_26044$$) {
-      var $G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$ = $G__26035_chunk__25930_r_26043_vec__25961_26039$$.$cljs$core$IIndexed$_nth$arity$2$(null, $b_26045_i__25932_vec__25964_26042$$), $G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$ = $delaunay_triangulation$core$edges$$($G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$), $G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$ = 
-      $cljs$core$first$$($cljs$core$first$$($G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$)), $G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$, 0, null), $G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$ = 
-      $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$, 1, null), $G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$ = $color_avg_from_right_within_triangle_vertices$$($G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$), $G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$ = 
-      $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$, 0, null), $G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$, 
-      1, null), $G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$, 2, null);
+  for (var $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$ = $cljs$core$seq$$($triangles$jscomp$3$$), $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$ = null, $b_14527_i__14414_vec__14446_14524$$ = $G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$ = 0;;) {
+    if ($b_14527_i__14414_vec__14446_14524$$ < $G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$) {
+      var $G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$ = $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$.$cljs$core$IIndexed$_nth$arity$2$(null, $b_14527_i__14414_vec__14446_14524$$), $G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$ = $delaunay_triangulation$core$edges$$($G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$), 
+      $G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$ = $cljs$core$first$$($cljs$core$first$$($G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$)), $G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$, 
+      0, null), $G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$, 1, null), $G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$ = $color_avg_from_right_within_triangle_vertices_map__14405__$1$$($G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$), 
+      $G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$, 0, null), $G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$, 
+      1, null), $G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$, 2, null);
       $context$$.beginPath();
-      $context$$.moveTo($G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$, $G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$);
-      for (var $G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$ = $cljs$core$seq$$($G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$), $G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$ = null, $i__25942_26000$$ = $G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$ = 
+      $context$$.moveTo($G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$, $G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$);
+      for (var $G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$ = $cljs$core$seq$$($G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$), $G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$ = null, $i__14424_14482$$ = $G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$ = 
       0;;) {
-        if ($i__25942_26000$$ < $G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$) {
-          var $to_x_26006_vec__25943_26001$$ = $G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$.$cljs$core$IIndexed$_nth$arity$2$(null, $i__25942_26000$$), $to_y_26007_vec__25946_26002_vec__25949_26005$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($to_x_26006_vec__25943_26001$$, 0, null);
-          $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($to_y_26007_vec__25946_26002_vec__25949_26005$$, 0, null);
-          $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($to_y_26007_vec__25946_26002_vec__25949_26005$$, 1, null);
-          $to_y_26007_vec__25946_26002_vec__25949_26005$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($to_x_26006_vec__25943_26001$$, 1, null);
-          $to_x_26006_vec__25943_26001$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($to_y_26007_vec__25946_26002_vec__25949_26005$$, 0, null);
-          $to_y_26007_vec__25946_26002_vec__25949_26005$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($to_y_26007_vec__25946_26002_vec__25949_26005$$, 1, null);
-          $context$$.lineTo($to_x_26006_vec__25943_26001$$, $to_y_26007_vec__25946_26002_vec__25949_26005$$);
-          $i__25942_26000$$ += 1;
+        if ($i__14424_14482$$ < $G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$) {
+          var $to_x_14488_vec__14425_14483$$ = $G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$.$cljs$core$IIndexed$_nth$arity$2$(null, $i__14424_14482$$), $to_y_14489_vec__14428_14484_vec__14431_14487$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($to_x_14488_vec__14425_14483$$, 0, null);
+          $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($to_y_14489_vec__14428_14484_vec__14431_14487$$, 0, null);
+          $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($to_y_14489_vec__14428_14484_vec__14431_14487$$, 1, null);
+          $to_y_14489_vec__14428_14484_vec__14431_14487$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($to_x_14488_vec__14425_14483$$, 1, null);
+          $to_x_14488_vec__14425_14483$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($to_y_14489_vec__14428_14484_vec__14431_14487$$, 0, null);
+          $to_y_14489_vec__14428_14484_vec__14431_14487$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($to_y_14489_vec__14428_14484_vec__14431_14487$$, 1, null);
+          $context$$.lineTo($to_x_14488_vec__14425_14483$$, $to_y_14489_vec__14428_14484_vec__14431_14487$$);
+          $i__14424_14482$$ += 1;
         } else {
-          if ($G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$ = $cljs$core$seq$$($G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$)) {
-            $cljs$core$chunked_seq_QMARK_$$($G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$) ? ($G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$ = $cljs$core$_chunked_first$$($G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$), $G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$ = 
-            $cljs$core$_chunked_rest$$($G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$), $G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$ = $G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$, $G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$ = 
-            $cljs$core$count$$($G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$)) : ($G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$ = $cljs$core$first$$($G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$), $G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$ = 
-            $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$, 0, null), $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$, 0, null), $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$, 
-            1, null), $G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$, 1, null), $G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$, 
-            0, null), $G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$, 1, null), $context$$.lineTo($G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$, 
-            $G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$), $G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$ = $cljs$core$next$$($G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$), $G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$ = 
-            null, $G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$ = 0), $i__25942_26000$$ = 0;
+          if ($G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$ = $cljs$core$seq$$($G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$)) {
+            $cljs$core$chunked_seq_QMARK_$$($G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$) ? ($G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$ = $cljs$core$_chunked_first$$($G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$), $G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$ = 
+            $cljs$core$_chunked_rest$$($G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$), $G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$ = $G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$, $G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$ = 
+            $cljs$core$count$$($G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$)) : ($G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$ = $cljs$core$first$$($G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$), $G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$ = 
+            $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$, 0, null), $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$, 0, null), $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$, 
+            1, null), $G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$, 1, null), $G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$, 
+            0, null), $G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$, 1, null), $context$$.lineTo($G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$, 
+            $G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$), $G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$ = $cljs$core$next$$($G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$), $G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$ = 
+            null, $G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$ = 0), $i__14424_14482$$ = 0;
           } else {
             break;
           }
         }
       }
-      $context$$.fillStyle = [$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$("rgb("), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$(", "), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$(", "), 
-      $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$(")")].join("");
+      $context$$.fillStyle = [$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$("rgb("), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$(", "), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$(", "), 
+      $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$(")")].join("");
       $context$$.closePath();
       $context$$.fill();
       $context$$.stroke();
-      $b_26045_i__25932_vec__25964_26042$$ += 1;
+      $b_14527_i__14414_vec__14446_14524$$ += 1;
     } else {
-      if ($G__26034_seq__25929_seq__25929__$1_temp__6753__auto__$jscomp$32_triangles$jscomp$3$$ = $cljs$core$seq$$($G__26034_seq__25929_seq__25929__$1_temp__6753__auto__$jscomp$32_triangles$jscomp$3$$)) {
-        if ($cljs$core$chunked_seq_QMARK_$$($G__26034_seq__25929_seq__25929__$1_temp__6753__auto__$jscomp$32_triangles$jscomp$3$$)) {
-          $G__26036_c__8279__auto__$jscomp$8_count__25931_g_26044$$ = $cljs$core$_chunked_first$$($G__26034_seq__25929_seq__25929__$1_temp__6753__auto__$jscomp$32_triangles$jscomp$3$$), $G__26034_seq__25929_seq__25929__$1_temp__6753__auto__$jscomp$32_triangles$jscomp$3$$ = $cljs$core$_chunked_rest$$($G__26034_seq__25929_seq__25929__$1_temp__6753__auto__$jscomp$32_triangles$jscomp$3$$), $G__26035_chunk__25930_r_26043_vec__25961_26039$$ = $G__26036_c__8279__auto__$jscomp$8_count__25931_g_26044$$, $G__26036_c__8279__auto__$jscomp$8_count__25931_g_26044$$ = 
-          $cljs$core$count$$($G__26036_c__8279__auto__$jscomp$8_count__25931_g_26044$$);
+      if ($G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$ = $cljs$core$seq$$($G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$)) {
+        if ($cljs$core$chunked_seq_QMARK_$$($G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$)) {
+          $G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$ = $cljs$core$_chunked_first$$($G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$), $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$ = $cljs$core$_chunked_rest$$($G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$), $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$ = $G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$, 
+          $G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$ = $cljs$core$count$$($G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$);
         } else {
-          $G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$ = $cljs$core$first$$($G__26034_seq__25929_seq__25929__$1_temp__6753__auto__$jscomp$32_triangles$jscomp$3$$);
-          $G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$ = $delaunay_triangulation$core$edges$$($G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$);
-          $G__26035_chunk__25930_r_26043_vec__25961_26039$$ = $cljs$core$first$$($cljs$core$first$$($G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$));
-          $G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26035_chunk__25930_r_26043_vec__25961_26039$$, 0, null);
-          $G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26035_chunk__25930_r_26043_vec__25961_26039$$, 1, null);
-          $b_26045_i__25932_vec__25964_26042$$ = $color_avg_from_right_within_triangle_vertices$$($G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$);
-          $G__26035_chunk__25930_r_26043_vec__25961_26039$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($b_26045_i__25932_vec__25964_26042$$, 0, null);
-          $G__26036_c__8279__auto__$jscomp$8_count__25931_g_26044$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($b_26045_i__25932_vec__25964_26042$$, 1, null);
-          $b_26045_i__25932_vec__25964_26042$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($b_26045_i__25932_vec__25964_26042$$, 2, null);
+          $G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$ = $cljs$core$first$$($G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$);
+          $G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$ = $delaunay_triangulation$core$edges$$($G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$);
+          $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$ = $cljs$core$first$$($cljs$core$first$$($G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$));
+          $G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$, 0, null);
+          $G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$, 1, null);
+          $b_14527_i__14414_vec__14446_14524$$ = $color_avg_from_right_within_triangle_vertices_map__14405__$1$$($G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$);
+          $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($b_14527_i__14414_vec__14446_14524$$, 0, null);
+          $G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($b_14527_i__14414_vec__14446_14524$$, 1, null);
+          $b_14527_i__14414_vec__14446_14524$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($b_14527_i__14414_vec__14446_14524$$, 2, null);
           $context$$.beginPath();
-          $context$$.moveTo($G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$, $G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$);
-          $G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$ = $cljs$core$seq$$($G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$);
-          $G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$ = null;
-          for ($G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$ = $G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$ = 0;;) {
-            if ($G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$ < $G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$) {
-              $G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$ = $G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$.$cljs$core$IIndexed$_nth$arity$2$(null, $G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$), $G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$ = 
-              $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$, 0, null), $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$, 0, null), $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$, 
-              1, null), $G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$, 1, null), $G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$, 
-              0, null), $G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$, 1, null), $context$$.lineTo($G__26016_chunk__25940_25998_first_x_25991_to_x_26024_to_x_26055_vec__25952_26019_vec__25971_26050$$, 
-              $G__26017_c__8279__auto___26014_count__25941_25999_first_y_25992_to_y_26025_to_y_26056_vec__25955_26020_vec__25958_26023_vec__25974_26051_vec__25977_26054$$), $G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$ += 1;
+          $context$$.moveTo($G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$, $G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$);
+          $G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$ = $cljs$core$seq$$($G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$);
+          $G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$ = null;
+          for ($G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$ = $G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$ = 0;;) {
+            if ($G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$ < $G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$) {
+              $G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$ = $G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$.$cljs$core$IIndexed$_nth$arity$2$(null, $G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$), $G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$ = 
+              $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$, 0, null), $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$, 0, null), $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$, 
+              1, null), $G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$, 1, null), $G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$, 
+              0, null), $G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$, 1, null), $context$$.lineTo($G__14498_chunk__14422_14480_first_x_14473_to_x_14506_to_x_14537_vec__14434_14501_vec__14453_14532$$, 
+              $G__14499_c__8279__auto___14496_count__14423_14481_first_y_14474_to_y_14507_to_y_14538_vec__14437_14502_vec__14440_14505_vec__14456_14533_vec__14459_14536$$), $G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$ += 1;
             } else {
-              if ($G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$ = $cljs$core$seq$$($G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$)) {
-                $cljs$core$chunked_seq_QMARK_$$($G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$) ? ($G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$ = $cljs$core$_chunked_first$$($G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$), $G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$ = 
-                $cljs$core$_chunked_rest$$($G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$), $G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$ = $G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$, $G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$ = 
-                $cljs$core$count$$($G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$)) : ($G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$ = $cljs$core$first$$($G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$), $G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$ = 
-                $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$, 0, null), $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$, 0, null), $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$, 
-                1, null), $G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$, 1, null), $G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$, 
-                0, null), $G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$, 1, null), $context$$.lineTo($G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$, $G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$), 
-                $G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$ = $cljs$core$next$$($G__26064_r_25994_seq__25967_26046_seq__25967_26062__$1_temp__6753__auto___26061__$1_triangle$$), $G__26065_chunk__25968_26047_g_25995_to_x_26073_triangle_edges_26038_vec__25933_25990_vec__25980_26068$$ = null, $G__26066_b_25996_c__8279__auto___26063_count__25969_26048_first_x_26040_to_y_26074_vec__25936_25993_vec__25983_26069_vec__25986_26072$$ = 0), $G__26015_first_y_26041_i__25970_26049_seq__25939_25997_seq__25939_26013__$1_temp__6753__auto___26012_triangle_edges_25989$$ = 
+              if ($G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$ = $cljs$core$seq$$($G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$)) {
+                $cljs$core$chunked_seq_QMARK_$$($G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$) ? ($G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$ = $cljs$core$_chunked_first$$($G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$), $G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$ = 
+                $cljs$core$_chunked_rest$$($G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$), $G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$ = $G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$, $G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$ = 
+                $cljs$core$count$$($G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$)) : ($G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$ = $cljs$core$first$$($G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$), $G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$ = 
+                $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$, 0, null), $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$, 0, null), $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$, 
+                1, null), $G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$, 1, null), $G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$, 
+                0, null), $G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$, 1, null), $context$$.lineTo($G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$, $G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$), 
+                $G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$ = $cljs$core$next$$($G__14546_r_14476_seq__14449_14528_seq__14449_14544__$1_temp__6753__auto___14543__$1_triangle$$), $G__14547_chunk__14450_14529_g_14477_to_x_14555_triangle_edges_14520_vec__14415_14472_vec__14462_14550$$ = null, $G__14548_b_14478_c__8279__auto___14545_count__14451_14530_first_x_14522_to_y_14556_vec__14418_14475_vec__14465_14551_vec__14468_14554$$ = 0), $G__14497_first_y_14523_i__14452_14531_seq__14421_14479_seq__14421_14495__$1_temp__6753__auto___14494_triangle_edges_14471$$ = 
                 0;
               } else {
                 break;
               }
             }
           }
-          $context$$.fillStyle = [$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$("rgb("), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($G__26035_chunk__25930_r_26043_vec__25961_26039$$), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$(", "), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($G__26036_c__8279__auto__$jscomp$8_count__25931_g_26044$$), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$(", "), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($b_26045_i__25932_vec__25964_26042$$), 
+          $context$$.fillStyle = [$cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$("rgb("), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$(", "), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$(", "), $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$($b_14527_i__14414_vec__14446_14524$$), 
           $cljs$core$str$$.$cljs$core$IFn$_invoke$arity$1$(")")].join("");
           $context$$.closePath();
           $context$$.fill();
           $context$$.stroke();
-          $G__26034_seq__25929_seq__25929__$1_temp__6753__auto__$jscomp$32_triangles$jscomp$3$$ = $cljs$core$next$$($G__26034_seq__25929_seq__25929__$1_temp__6753__auto__$jscomp$32_triangles$jscomp$3$$);
-          $G__26035_chunk__25930_r_26043_vec__25961_26039$$ = null;
-          $G__26036_c__8279__auto__$jscomp$8_count__25931_g_26044$$ = 0;
+          $G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$ = $cljs$core$next$$($G__14516_data$jscomp$35_seq__14411_seq__14411__$1_temp__6753__auto__$jscomp$32$$);
+          $G__14517_chunk__14412_r_14525_vec__14443_14521_width$jscomp$12$$ = null;
+          $G__14518_c__8279__auto__$jscomp$8_count__14413_g_14526_map_px$$ = 0;
         }
-        $b_26045_i__25932_vec__25964_26042$$ = 0;
+        $b_14527_i__14414_vec__14446_14524$$ = 0;
       } else {
         break;
       }
     }
   }
 }
-function $sonja$palettizer$new_positions$$($points$jscomp$2$$, $width$jscomp$13$$, $height$jscomp$12$$) {
-  function $random_function$$() {
-    return Math.floor(40 * Math.random()) - 20;
-  }
-  var $within$$ = function() {
-    return function($points$jscomp$2$$, $width$jscomp$13$$) {
-      return 0 < $points$jscomp$2$$ && $points$jscomp$2$$ < $width$jscomp$13$$;
+function $sonja$palettizer$new_positions$$($p__14565$$, $points$jscomp$2$$) {
+  var $map__14572__$1$$ = null != $p__14565$$ && ($p__14565$$.$cljs$lang$protocol_mask$partition0$$ & 64 || $cljs$core$PROTOCOL_SENTINEL$$ === $p__14565$$.$cljs$core$ISeq$$) ? $cljs$core$apply$cljs$0core$0IFn$0_invoke$0arity$02$$($cljs$core$hash_map$$, $p__14565$$) : $p__14565$$, $width$jscomp$22$$ = $cljs$core$get$$.$cljs$core$IFn$_invoke$arity$2$($map__14572__$1$$, $cljs$core$cst$0kw$0width$$), $height$jscomp$11$$ = $cljs$core$get$$.$cljs$core$IFn$_invoke$arity$2$($map__14572__$1$$, $cljs$core$cst$0kw$0height$$), 
+  $random_function$$ = function() {
+    return function() {
+      return Math.floor(40 * Math.random()) - 20;
     };
-  }($random_function$$), $new_position_if_within$$ = function($points$jscomp$2$$, $random_function$$) {
-    return function($within$$, $new_position_if_within$$) {
-      var $random_function$jscomp$2$$ = $within$$ + $points$jscomp$2$$(), $within$jscomp$1$$ = $new_position_if_within$$ + $points$jscomp$2$$();
-      return new $cljs$core$PersistentVector$$(null, 2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [$cljs$core$truth_$$($random_function$$($random_function$jscomp$2$$, $width$jscomp$13$$)) ? $random_function$jscomp$2$$ : $within$$, $cljs$core$truth_$$($random_function$$($within$jscomp$1$$, $height$jscomp$12$$)) ? $within$jscomp$1$$ : $new_position_if_within$$], null);
+  }($p__14565$$, $map__14572__$1$$, $width$jscomp$22$$, $height$jscomp$11$$), $within$$ = function() {
+    return function($p__14565$$, $points$jscomp$2$$) {
+      return 0 < $p__14565$$ && $p__14565$$ < $points$jscomp$2$$;
     };
-  }($random_function$$, $within$$);
-  return $cljs$core$map$$.$cljs$core$IFn$_invoke$arity$2$($cljs$core$partial$cljs$0core$0IFn$0_invoke$0arity$02$$(function($points$jscomp$2$$, $random_function$$, $within$$, $new_position_if_within$$) {
-    return function($points$jscomp$2$$, $random_function$$) {
-      var $within$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($random_function$$, 0, null), $random_function$jscomp$4$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($random_function$$, 1, null), $within$jscomp$3$$;
-      $within$jscomp$3$$ = $new_position_if_within$$($within$$, $width$jscomp$13$$);
-      $within$jscomp$3$$ = $cljs$core$truth_$$($within$jscomp$3$$) ? $new_position_if_within$$($random_function$jscomp$4$$, $height$jscomp$12$$) : $within$jscomp$3$$;
-      return $cljs$core$truth_$$($within$jscomp$3$$) ? $points$jscomp$2$$.$cljs$core$IFn$_invoke$arity$2$ ? $points$jscomp$2$$.$cljs$core$IFn$_invoke$arity$2$($within$$, $random_function$jscomp$4$$) : $points$jscomp$2$$.call(null, $within$$, $random_function$jscomp$4$$) : new $cljs$core$PersistentVector$$(null, 2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [$within$$, $random_function$jscomp$4$$], null);
+  }($random_function$$, $p__14565$$, $map__14572__$1$$, $width$jscomp$22$$, $height$jscomp$11$$), $new_position_if_within$$ = function($p__14565$$, $points$jscomp$2$$, $map__14572__$1$$, $width$jscomp$22$$, $height$jscomp$11$$, $random_function$$) {
+    return function($map__14572__$1$$, $width$jscomp$22$$) {
+      var $within$$ = $map__14572__$1$$ + $p__14565$$(), $new_position_if_within$$ = $width$jscomp$22$$ + $p__14565$$();
+      return new $cljs$core$PersistentVector$$(null, 2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [$cljs$core$truth_$$($points$jscomp$2$$($within$$, $height$jscomp$11$$)) ? $within$$ : $map__14572__$1$$, $cljs$core$truth_$$($points$jscomp$2$$($new_position_if_within$$, $random_function$$)) ? $new_position_if_within$$ : $width$jscomp$22$$], null);
+    };
+  }($random_function$$, $within$$, $p__14565$$, $map__14572__$1$$, $width$jscomp$22$$, $height$jscomp$11$$);
+  return $cljs$core$map$$.$cljs$core$IFn$_invoke$arity$2$($cljs$core$partial$cljs$0core$0IFn$0_invoke$0arity$02$$(function($p__14565$$, $points$jscomp$2$$, $map__14572__$1$$, $width$jscomp$22$$, $height$jscomp$11$$, $random_function$$, $within$$, $new_position_if_within$$) {
+    return function($p__14565$$, $points$jscomp$2$$) {
+      var $map__14572__$1$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($points$jscomp$2$$, 0, null), $height$jscomp$11$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($points$jscomp$2$$, 1, null), $random_function$$;
+      $random_function$$ = $width$jscomp$22$$($map__14572__$1$$, $within$$);
+      $random_function$$ = $cljs$core$truth_$$($random_function$$) ? $width$jscomp$22$$($height$jscomp$11$$, $new_position_if_within$$) : $random_function$$;
+      return $cljs$core$truth_$$($random_function$$) ? $p__14565$$.$cljs$core$IFn$_invoke$arity$2$ ? $p__14565$$.$cljs$core$IFn$_invoke$arity$2$($map__14572__$1$$, $height$jscomp$11$$) : $p__14565$$.call(null, $map__14572__$1$$, $height$jscomp$11$$) : new $cljs$core$PersistentVector$$(null, 2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [$map__14572__$1$$, $height$jscomp$11$$], null);
     };
   }($random_function$$, $within$$, $new_position_if_within$$, function() {
-    return function($points$jscomp$2$$, $width$jscomp$13$$) {
-      return !$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($points$jscomp$2$$, 0) && !$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($points$jscomp$2$$, $width$jscomp$13$$);
+    return function($p__14565$$, $points$jscomp$2$$) {
+      return !$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($p__14565$$, 0) && !$cljs$core$_EQ_$$.$cljs$core$IFn$_invoke$arity$2$($p__14565$$, $points$jscomp$2$$);
     };
-  }($random_function$$, $within$$, $new_position_if_within$$)), $new_position_if_within$$), $points$jscomp$2$$);
+  }($random_function$$, $within$$, $new_position_if_within$$, $p__14565$$, $map__14572__$1$$, $width$jscomp$22$$, $height$jscomp$11$$), $p__14565$$, $map__14572__$1$$, $width$jscomp$22$$, $height$jscomp$11$$), $new_position_if_within$$), $points$jscomp$2$$);
 }
-var $sonja$palettizer$update_frame$$ = function $sonja$palettizer$update_frame$$($context$jscomp$1$$, $data$jscomp$36$$, $current_points$$, $future_points$$, $w$jscomp$7$$, $h$jscomp$119$$, $i$jscomp$263$$) {
-  var $moving_function$$ = function($context$jscomp$1$$) {
-    return function($data$jscomp$36$$, $current_points$$) {
-      return $i$jscomp$263$$ / $context$jscomp$1$$ * ($current_points$$ - $data$jscomp$36$$);
-    };
-  }(100), $moved_points$$ = $cljs$core$map$$.$cljs$core$IFn$_invoke$arity$3$(function($context$jscomp$1$$, $data$jscomp$36$$) {
-    return function($context$jscomp$1$$, $current_points$$) {
-      var $future_points$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($context$jscomp$1$$, 0, null), $w$jscomp$7$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($context$jscomp$1$$, 1, null), $h$jscomp$119$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($current_points$$, 0, null), $i$jscomp$263$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($current_points$$, 1, null);
-      return new $cljs$core$PersistentVector$$(null, 2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [$future_points$$ + $data$jscomp$36$$($future_points$$, $h$jscomp$119$$), $w$jscomp$7$$ + $data$jscomp$36$$($w$jscomp$7$$, $i$jscomp$263$$)], null);
-    };
-  }(100, $moving_function$$), $current_points$$, $future_points$$);
-  $context$jscomp$1$$.fillStyle = "#fff";
-  $context$jscomp$1$$.fillRect(0, 0, $w$jscomp$7$$, $h$jscomp$119$$);
-  $sonja$palettizer$draw_triangles$$($context$jscomp$1$$, $data$jscomp$36$$, $w$jscomp$7$$, $cljs$core$cst$0kw$0triangles$$.$cljs$core$IFn$_invoke$arity$1$($delaunay_triangulation$core$triangulate$$($moved_points$$)));
-  return setTimeout(function($moving_function$$) {
+var $sonja$palettizer$update_frame$$ = function $sonja$palettizer$update_frame$$($p__14578$$, $current_points$$, $future_points$$, $i$jscomp$263$$) {
+  var $map__14599__$1$$ = null != $p__14578$$ && ($p__14578$$.$cljs$lang$protocol_mask$partition0$$ & 64 || $cljs$core$PROTOCOL_SENTINEL$$ === $p__14578$$.$cljs$core$ISeq$$) ? $cljs$core$apply$cljs$0core$0IFn$0_invoke$0arity$02$$($cljs$core$hash_map$$, $p__14578$$) : $p__14578$$, $context$jscomp$10$$ = $cljs$core$get$$.$cljs$core$IFn$_invoke$arity$2$($map__14599__$1$$, $cljs$core$cst$0kw$0context$$), $width$jscomp$28$$ = $cljs$core$get$$.$cljs$core$IFn$_invoke$arity$2$($map__14599__$1$$, $cljs$core$cst$0kw$0width$$), 
+  $height$jscomp$17$$ = $cljs$core$get$$.$cljs$core$IFn$_invoke$arity$2$($map__14599__$1$$, $cljs$core$cst$0kw$0height$$), $moved_points$$ = function($p__14578$$, $map__14599__$1$$, $context$jscomp$10$$, $width$jscomp$28$$, $height$jscomp$17$$, $moved_points$$, $fill_bg_white$$) {
     return function() {
-      if ($i$jscomp$263$$ < $moving_function$$) {
-        var $moved_points$$ = $i$jscomp$263$$ + 1;
-        return $sonja$palettizer$update_frame$$.$cljs$core$IFn$_invoke$arity$7$ ? $sonja$palettizer$update_frame$$.$cljs$core$IFn$_invoke$arity$7$($context$jscomp$1$$, $data$jscomp$36$$, $current_points$$, $future_points$$, $w$jscomp$7$$, $h$jscomp$119$$, $moved_points$$) : $sonja$palettizer$update_frame$$.call(null, $context$jscomp$1$$, $data$jscomp$36$$, $current_points$$, $future_points$$, $w$jscomp$7$$, $h$jscomp$119$$, $moved_points$$);
+      return $cljs$core$map$$.$cljs$core$IFn$_invoke$arity$3$(function($p__14578$$) {
+        return function($current_points$$, $future_points$$) {
+          var $i$jscomp$263$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($current_points$$, 0, null), $map__14599__$1$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($current_points$$, 1, null), $context$jscomp$10$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($future_points$$, 0, null), $width$jscomp$28$$ = $cljs$core$nth$cljs$0core$0IFn$0_invoke$0arity$03$$($future_points$$, 1, null);
+          return new $cljs$core$PersistentVector$$(null, 2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [$i$jscomp$263$$ + $p__14578$$($i$jscomp$263$$, $context$jscomp$10$$), $map__14599__$1$$ + $p__14578$$($map__14599__$1$$, $width$jscomp$28$$)], null);
+        };
+      }(function($p__14578$$) {
+        return function($current_points$$, $future_points$$) {
+          return $i$jscomp$263$$ / $p__14578$$ * ($future_points$$ - $current_points$$);
+        };
+      }($p__14578$$, $map__14599__$1$$, $context$jscomp$10$$, $width$jscomp$28$$, $height$jscomp$17$$, $moved_points$$, $fill_bg_white$$), $p__14578$$, $map__14599__$1$$, $context$jscomp$10$$, $width$jscomp$28$$, $height$jscomp$17$$, $moved_points$$, $fill_bg_white$$), $current_points$$, $future_points$$);
+    };
+  }(100, $p__14578$$, $map__14599__$1$$, $map__14599__$1$$, $context$jscomp$10$$, $width$jscomp$28$$, $height$jscomp$17$$), $fill_bg_white$$ = function($p__14578$$, $current_points$$, $future_points$$, $i$jscomp$263$$, $map__14599__$1$$, $context$jscomp$10$$, $width$jscomp$28$$, $height$jscomp$17$$) {
+    return function() {
+      $context$jscomp$10$$.fillStyle = "#fff";
+      return $context$jscomp$10$$.fillRect(0, 0, $width$jscomp$28$$, $height$jscomp$17$$);
+    };
+  }(100, $moved_points$$, $p__14578$$, $map__14599__$1$$, $map__14599__$1$$, $context$jscomp$10$$, $width$jscomp$28$$, $height$jscomp$17$$);
+  $fill_bg_white$$();
+  $sonja$palettizer$draw_triangles$$($map__14599__$1$$, $cljs$core$cst$0kw$0triangles$$.$cljs$core$IFn$_invoke$arity$1$($delaunay_triangulation$core$triangulate$$($moved_points$$())));
+  return setTimeout(function($p__14578$$, $map__14599__$1$$, $context$jscomp$10$$, $width$jscomp$28$$, $height$jscomp$17$$, $moved_points$$) {
+    return function() {
+      if ($i$jscomp$263$$ < $p__14578$$) {
+        var $map__14599__$1$$ = $i$jscomp$263$$ + 1;
+        return $sonja$palettizer$update_frame$$.$cljs$core$IFn$_invoke$arity$4$ ? $sonja$palettizer$update_frame$$.$cljs$core$IFn$_invoke$arity$4$($moved_points$$, $current_points$$, $future_points$$, $map__14599__$1$$) : $sonja$palettizer$update_frame$$.call(null, $moved_points$$, $current_points$$, $future_points$$, $map__14599__$1$$);
       }
-      $moved_points$$ = $sonja$palettizer$new_positions$$($future_points$$, $w$jscomp$7$$, $h$jscomp$119$$);
-      return $sonja$palettizer$update_frame$$.$cljs$core$IFn$_invoke$arity$7$ ? $sonja$palettizer$update_frame$$.$cljs$core$IFn$_invoke$arity$7$($context$jscomp$1$$, $data$jscomp$36$$, $future_points$$, $moved_points$$, $w$jscomp$7$$, $h$jscomp$119$$, 0) : $sonja$palettizer$update_frame$$.call(null, $context$jscomp$1$$, $data$jscomp$36$$, $future_points$$, $moved_points$$, $w$jscomp$7$$, $h$jscomp$119$$, 0);
+      $map__14599__$1$$ = $sonja$palettizer$new_positions$$($moved_points$$, $future_points$$);
+      return $sonja$palettizer$update_frame$$.$cljs$core$IFn$_invoke$arity$4$ ? $sonja$palettizer$update_frame$$.$cljs$core$IFn$_invoke$arity$4$($moved_points$$, $future_points$$, $map__14599__$1$$, 0) : $sonja$palettizer$update_frame$$.call(null, $moved_points$$, $future_points$$, $map__14599__$1$$, 0);
     };
-  }(100, $moving_function$$, $moved_points$$), 20);
+  }(100, $moved_points$$, $fill_bg_white$$, $p__14578$$, $map__14599__$1$$, $map__14599__$1$$, $context$jscomp$10$$, $width$jscomp$28$$, $height$jscomp$17$$), 20);
 };
-function $sonja$palettizer$run$$($context$jscomp$2$$, $width$jscomp$14$$, $height$jscomp$13$$) {
-  var $edge_points_rand_points$$ = new $cljs$core$PersistentVector$$(null, 4, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [new $cljs$core$PersistentVector$$(null, 2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [0, 0], null), new $cljs$core$PersistentVector$$(null, 2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [$width$jscomp$14$$, 0], null), new $cljs$core$PersistentVector$$(null, 2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [$width$jscomp$14$$, $height$jscomp$13$$], null), new $cljs$core$PersistentVector$$(null, 
-  2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [0, $height$jscomp$13$$], null)], null), $edge_points_rand_points$$ = $cljs$core$concat$$.$cljs$core$IFn$_invoke$arity$2$($edge_points_rand_points$$, $cljs$core$map$$.$cljs$core$IFn$_invoke$arity$2$(function() {
+function $sonja$palettizer$run$$($context$jscomp$16_drawing_context$jscomp$6$$, $width$jscomp$34$$, $height$jscomp$23$$) {
+  var $base_points_edge_points$$ = new $cljs$core$PersistentVector$$(null, 4, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [new $cljs$core$PersistentVector$$(null, 2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [0, 0], null), new $cljs$core$PersistentVector$$(null, 2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [$width$jscomp$34$$, 0], null), new $cljs$core$PersistentVector$$(null, 2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [$width$jscomp$34$$, $height$jscomp$23$$], null), new $cljs$core$PersistentVector$$(null, 
+  2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [0, $height$jscomp$23$$], null)], null), $rand_points$$ = $cljs$core$take$cljs$0core$0IFn$0_invoke$0arity$02$$(20, $cljs$core$repeatedly$cljs$0core$0IFn$0_invoke$0arity$01$$(function() {
     return function() {
-      return new $cljs$core$PersistentVector$$(null, 2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [Math.floor(Math.random() * $width$jscomp$14$$), Math.floor(Math.random() * $height$jscomp$13$$)], null);
+      return new $cljs$core$PersistentVector$$(null, 2, 5, $cljs$core$PersistentVector$EMPTY_NODE$$, [Math.floor(Math.random() * $width$jscomp$34$$), Math.floor(Math.random() * $height$jscomp$23$$)], null);
     };
-  }($edge_points_rand_points$$), new $cljs$core$Range$$(null, 0, 20, 1, null)));
-  return $sonja$palettizer$update_frame$$($context$jscomp$2$$, $context$jscomp$2$$.getImageData(0, 0, $width$jscomp$14$$, $height$jscomp$13$$).data, $edge_points_rand_points$$, $sonja$palettizer$new_positions$$($edge_points_rand_points$$, $width$jscomp$14$$, $height$jscomp$13$$), $width$jscomp$14$$, $height$jscomp$13$$, 0);
+  }($base_points_edge_points$$))), $base_points_edge_points$$ = $cljs$core$concat$$.$cljs$core$IFn$_invoke$arity$2$($base_points_edge_points$$, $rand_points$$);
+  $context$jscomp$16_drawing_context$jscomp$6$$ = new $cljs$core$PersistentArrayMap$$(null, 4, [$cljs$core$cst$0kw$0width$$, $width$jscomp$34$$, $cljs$core$cst$0kw$0height$$, $height$jscomp$23$$, $cljs$core$cst$0kw$0context$$, $context$jscomp$16_drawing_context$jscomp$6$$, $cljs$core$cst$0kw$0data$$, $context$jscomp$16_drawing_context$jscomp$6$$.getImageData(0, 0, $width$jscomp$34$$, $height$jscomp$23$$).data], null);
+  return $sonja$palettizer$update_frame$$($context$jscomp$16_drawing_context$jscomp$6$$, $base_points_edge_points$$, $sonja$palettizer$new_positions$$($context$jscomp$16_drawing_context$jscomp$6$$, $base_points_edge_points$$), 0);
 }
 ;function $sonja$loader$kill_possible_unfinished_palettizations$$() {
-  for (var $c__8279__auto__$jscomp$9_highest_timeout_id_seq__26149_temp__6753__auto__$jscomp$33$$ = function() {
+  for (var $c__8279__auto__$jscomp$9_highest_timeout_id_seq__14629_temp__6753__auto__$jscomp$33$$ = function() {
     return setTimeout(function() {
       return null;
     }, 1);
-  }(), $c__8279__auto__$jscomp$9_highest_timeout_id_seq__26149_temp__6753__auto__$jscomp$33$$ = $cljs$core$seq$$(new $cljs$core$Range$$(null, 10, $c__8279__auto__$jscomp$9_highest_timeout_id_seq__26149_temp__6753__auto__$jscomp$33$$, 1, null)), $G__26158_chunk__26150_seq__26149__$1$$ = null, $G__26157_count__26151$$ = 0, $i__26152$$ = 0;;) {
-    if ($i__26152$$ < $G__26157_count__26151$$) {
-      var $G__26159_i$jscomp$264$$ = $G__26158_chunk__26150_seq__26149__$1$$.$cljs$core$IIndexed$_nth$arity$2$(null, $i__26152$$);
-      clearTimeout($G__26159_i$jscomp$264$$);
-      $i__26152$$ += 1;
+  }(), $c__8279__auto__$jscomp$9_highest_timeout_id_seq__14629_temp__6753__auto__$jscomp$33$$ = $cljs$core$seq$$(new $cljs$core$Range$$(null, 10, $c__8279__auto__$jscomp$9_highest_timeout_id_seq__14629_temp__6753__auto__$jscomp$33$$, 1, null)), $G__14638_chunk__14630_seq__14629__$1$$ = null, $G__14637_count__14631$$ = 0, $i__14632$$ = 0;;) {
+    if ($i__14632$$ < $G__14637_count__14631$$) {
+      var $G__14639_i$jscomp$264$$ = $G__14638_chunk__14630_seq__14629__$1$$.$cljs$core$IIndexed$_nth$arity$2$(null, $i__14632$$);
+      clearTimeout($G__14639_i$jscomp$264$$);
+      $i__14632$$ += 1;
     } else {
-      if ($c__8279__auto__$jscomp$9_highest_timeout_id_seq__26149_temp__6753__auto__$jscomp$33$$ = $cljs$core$seq$$($c__8279__auto__$jscomp$9_highest_timeout_id_seq__26149_temp__6753__auto__$jscomp$33$$)) {
-        $G__26158_chunk__26150_seq__26149__$1$$ = $c__8279__auto__$jscomp$9_highest_timeout_id_seq__26149_temp__6753__auto__$jscomp$33$$, $cljs$core$chunked_seq_QMARK_$$($G__26158_chunk__26150_seq__26149__$1$$) ? ($c__8279__auto__$jscomp$9_highest_timeout_id_seq__26149_temp__6753__auto__$jscomp$33$$ = $cljs$core$_chunked_first$$($G__26158_chunk__26150_seq__26149__$1$$), $G__26157_count__26151$$ = $cljs$core$_chunked_rest$$($G__26158_chunk__26150_seq__26149__$1$$), $G__26158_chunk__26150_seq__26149__$1$$ = 
-        $c__8279__auto__$jscomp$9_highest_timeout_id_seq__26149_temp__6753__auto__$jscomp$33$$, $G__26159_i$jscomp$264$$ = $cljs$core$count$$($c__8279__auto__$jscomp$9_highest_timeout_id_seq__26149_temp__6753__auto__$jscomp$33$$), $c__8279__auto__$jscomp$9_highest_timeout_id_seq__26149_temp__6753__auto__$jscomp$33$$ = $G__26157_count__26151$$, $G__26157_count__26151$$ = $G__26159_i$jscomp$264$$) : ($G__26159_i$jscomp$264$$ = $cljs$core$first$$($G__26158_chunk__26150_seq__26149__$1$$), clearTimeout($G__26159_i$jscomp$264$$), 
-        $c__8279__auto__$jscomp$9_highest_timeout_id_seq__26149_temp__6753__auto__$jscomp$33$$ = $cljs$core$next$$($G__26158_chunk__26150_seq__26149__$1$$), $G__26158_chunk__26150_seq__26149__$1$$ = null, $G__26157_count__26151$$ = 0), $i__26152$$ = 0;
+      if ($c__8279__auto__$jscomp$9_highest_timeout_id_seq__14629_temp__6753__auto__$jscomp$33$$ = $cljs$core$seq$$($c__8279__auto__$jscomp$9_highest_timeout_id_seq__14629_temp__6753__auto__$jscomp$33$$)) {
+        $G__14638_chunk__14630_seq__14629__$1$$ = $c__8279__auto__$jscomp$9_highest_timeout_id_seq__14629_temp__6753__auto__$jscomp$33$$, $cljs$core$chunked_seq_QMARK_$$($G__14638_chunk__14630_seq__14629__$1$$) ? ($c__8279__auto__$jscomp$9_highest_timeout_id_seq__14629_temp__6753__auto__$jscomp$33$$ = $cljs$core$_chunked_first$$($G__14638_chunk__14630_seq__14629__$1$$), $G__14637_count__14631$$ = $cljs$core$_chunked_rest$$($G__14638_chunk__14630_seq__14629__$1$$), $G__14638_chunk__14630_seq__14629__$1$$ = 
+        $c__8279__auto__$jscomp$9_highest_timeout_id_seq__14629_temp__6753__auto__$jscomp$33$$, $G__14639_i$jscomp$264$$ = $cljs$core$count$$($c__8279__auto__$jscomp$9_highest_timeout_id_seq__14629_temp__6753__auto__$jscomp$33$$), $c__8279__auto__$jscomp$9_highest_timeout_id_seq__14629_temp__6753__auto__$jscomp$33$$ = $G__14637_count__14631$$, $G__14637_count__14631$$ = $G__14639_i$jscomp$264$$) : ($G__14639_i$jscomp$264$$ = $cljs$core$first$$($G__14638_chunk__14630_seq__14629__$1$$), clearTimeout($G__14639_i$jscomp$264$$), 
+        $c__8279__auto__$jscomp$9_highest_timeout_id_seq__14629_temp__6753__auto__$jscomp$33$$ = $cljs$core$next$$($G__14638_chunk__14630_seq__14629__$1$$), $G__14638_chunk__14630_seq__14629__$1$$ = null, $G__14637_count__14631$$ = 0), $i__14632$$ = 0;
       } else {
         return null;
       }
@@ -7082,32 +7117,32 @@ function $sonja$loader$hide_img_and_show_canvas$$($img_tag$jscomp$2$$, $canvas$j
   $img_tag$jscomp$2$$.style.display = "none";
 }
 function $sonja$loader$hover_start$$($img_tag$jscomp$3$$) {
-  var $img_width$$ = $img_tag$jscomp$3$$.width | 0, $img_height$$ = $img_tag$jscomp$3$$.height | 0, $canvas$jscomp$3$$ = document.createElement("canvas"), $context$jscomp$3$$ = $canvas$jscomp$3$$.getContext("2d"), $img$jscomp$2$$ = new Image, $load_img$$ = function($img_width$$, $img_height$$, $canvas$jscomp$3$$, $context$jscomp$3$$, $img$jscomp$2$$) {
-    return function($context$jscomp$3$$) {
+  var $img_width$$ = $img_tag$jscomp$3$$.width | 0, $img_height$$ = $img_tag$jscomp$3$$.height | 0, $canvas$jscomp$3$$ = document.createElement("canvas"), $context$jscomp$17$$ = $canvas$jscomp$3$$.getContext("2d"), $img$jscomp$2$$ = new Image, $load_img$$ = function($img_width$$, $img_height$$, $canvas$jscomp$3$$, $context$jscomp$17$$, $img$jscomp$2$$) {
+    return function($context$jscomp$17$$) {
       $canvas$jscomp$3$$.width = $img_width$$;
       $canvas$jscomp$3$$.height = $img_height$$;
-      $img$jscomp$2$$.onload = $context$jscomp$3$$;
+      $img$jscomp$2$$.onload = $context$jscomp$17$$;
       $img$jscomp$2$$.crossOrigin = "anonymous";
       return $img$jscomp$2$$.src = $img_tag$jscomp$3$$.src;
     };
-  }($img_width$$, $img_height$$, $canvas$jscomp$3$$, $context$jscomp$3$$, $img$jscomp$2$$);
-  return $load_img$$(function($img_width$$, $img_height$$, $canvas$jscomp$3$$, $context$jscomp$3$$, $img$jscomp$2$$) {
+  }($img_width$$, $img_height$$, $canvas$jscomp$3$$, $context$jscomp$17$$, $img$jscomp$2$$);
+  return $load_img$$(function($img_width$$, $img_height$$, $canvas$jscomp$3$$, $context$jscomp$17$$, $img$jscomp$2$$) {
     return function() {
       $sonja$loader$hide_img_and_show_canvas$$($img_tag$jscomp$3$$, $canvas$jscomp$3$$);
-      $context$jscomp$3$$.drawImage($img$jscomp$2$$, 0, 0);
-      return $sonja$palettizer$run$$($context$jscomp$3$$, $img_width$$, $img_height$$);
+      $context$jscomp$17$$.drawImage($img$jscomp$2$$, 0, 0);
+      return $sonja$palettizer$run$$($context$jscomp$17$$, $img_width$$, $img_height$$);
     };
-  }($img_width$$, $img_height$$, $canvas$jscomp$3$$, $context$jscomp$3$$, $img$jscomp$2$$, $load_img$$));
+  }($img_width$$, $img_height$$, $canvas$jscomp$3$$, $context$jscomp$17$$, $img$jscomp$2$$, $load_img$$));
 }
 function $sonja$loader$set_hover_events_for_img_tags$$() {
   for (var $img_tags$$ = document.getElementsByTagName("img"), $n__8389__auto__$$ = $img_tags$$.length, $i$jscomp$265$$ = 0;;) {
     if ($i$jscomp$265$$ < $n__8389__auto__$$) {
-      var $img_tag_26165$$ = $img_tags$$.item($i$jscomp$265$$);
-      $img_tag_26165$$.onmouseover = function($img_tags$$, $n__8389__auto__$$) {
+      var $img_tag_14645$$ = $img_tags$$.item($i$jscomp$265$$);
+      $img_tag_14645$$.onmouseover = function($img_tags$$, $n__8389__auto__$$) {
         return function() {
           return $sonja$loader$hover_start$$($n__8389__auto__$$);
         };
-      }($i$jscomp$265$$, $img_tag_26165$$, $n__8389__auto__$$, $img_tags$$);
+      }($i$jscomp$265$$, $img_tag_14645$$, $n__8389__auto__$$, $img_tags$$);
       $i$jscomp$265$$ += 1;
     } else {
       return null;

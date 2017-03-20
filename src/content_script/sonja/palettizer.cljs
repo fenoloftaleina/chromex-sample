@@ -2,7 +2,7 @@
   (:require [delaunay-triangulation.core :as delaunay]
             [chromex.logging :refer-macros [log]]))
 
-(defn draw-triangles [context data width height triangles]
+(defn draw-triangles [{:keys [context data width]} triangles]
   (let [map-px (fn [x y] (+ (* 4 x) (* 4 width y)))
         get-px (fn [x y]
                  (let [pos (map-px x y)]
@@ -35,7 +35,7 @@
         (.fill context)
         (.stroke context)))))
 
-(defn new-positions [points width height]
+(defn new-positions [{:keys [width height]} points]
   (let [random-function (fn [] (- (rand-int 40) 20))
         within (fn [value border] (and (> value 0) (< value border)))
         new-position-if-within
@@ -60,40 +60,53 @@
       (partial new-position-if-not-on-border new-position-if-within)
       points)))
 
-(defn update-frame [context data current-points future-points w h i]
-  (let [frames 100.0
-        moving-function (fn [cur fut]
-                          (* (/ i frames) (- fut cur)))
-        moved-points (map
-                       (fn [[current-x current-y] [next-x next-y]]
-                         [(+ current-x (moving-function current-x next-x))
-                          (+ current-y (moving-function current-y next-y))])
-                       current-points
-                       future-points)]
-    (set! (.-fillStyle context) "#fff")
-    (.fillRect context 0 0 w h)
+(defn update-frame [{:keys [context width height] :as drawing-context}
+                    current-points future-points i]
+  (let [frames 100
+        moved-points
+        (fn []
+          (let [moving-function (fn [cur fut]
+                                  (* (/ i (float frames)) (- fut cur)))]
+            (map
+              (fn [[current-x current-y] [next-x next-y]]
+                [(+ current-x (moving-function current-x next-x))
+                 (+ current-y (moving-function current-y next-y))])
+              current-points
+              future-points)))
+        fill-bg-white (fn []
+                        (set! (.-fillStyle context) "#fff")
+                        (.fillRect context 0 0 width height))]
+    (fill-bg-white)
     (draw-triangles
-      context
-      data
-      w
-      h
+      drawing-context
       (:triangles
-        (delaunay/triangulate moved-points)))
+        (delaunay/triangulate (moved-points))))
     (js/setTimeout
       (fn []
         (if (< i frames)
-          (update-frame context data current-points future-points w h (inc i))
-          (update-frame context data future-points (new-positions future-points w h) w h 0)))
+          (update-frame
+            drawing-context
+            current-points
+            future-points
+            (inc i))
+          (update-frame
+            drawing-context
+            future-points
+            (new-positions drawing-context future-points)
+            0)))
       20)))
 
 (defn run [context width height]
   (let [edge-points [[0 0] [width 0] [width height] [0 height]]
-        rand-points (concat edge-points (map (fn [] [(rand-int width) (rand-int height)]) (range 20)))]
+        rand-points (take 20 (repeatedly
+                               (fn [] [(rand-int width) (rand-int height)])))
+        base-points (concat edge-points rand-points)
+        drawing-context {:width width
+                         :height height
+                         :context context
+                         :data (.-data (.getImageData context 0 0 width height))}]
     (update-frame
-      context
-      (.-data (.getImageData context 0 0 width height))
-      rand-points
-      (new-positions rand-points width height)
-      width
-      height
+      drawing-context
+      base-points
+      (new-positions drawing-context base-points)
       0)))
