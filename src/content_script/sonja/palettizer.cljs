@@ -60,7 +60,7 @@
       (partial new-position-if-not-on-border new-position-if-within)
       points)))
 
-(defn update-frame [{:keys [context width height] :as drawing-context}
+(defn frame-loop [{:keys [context width height] :as drawing-context}
                     current-points future-points i]
   (let [frames 100
         moved-points
@@ -84,12 +84,12 @@
     (js/setTimeout
       (fn []
         (if (< i frames)
-          (update-frame
+          (frame-loop
             drawing-context
             current-points
             future-points
             (inc i))
-          (update-frame
+          (frame-loop
             drawing-context
             future-points
             (new-positions drawing-context future-points)
@@ -104,9 +104,12 @@
         drawing-context {:width width
                          :height height
                          :context context
-                         :data (.-data (.getImageData context 0 0 width height))}]
-    (update-frame
-      drawing-context
-      base-points
-      (new-positions drawing-context base-points)
-      0)))
+                         :data (.-data (.getImageData context 0 0 width height))}
+        start-updating-and-drawing-frames
+        (fn []
+          (frame-loop
+            drawing-context
+            base-points
+            (new-positions drawing-context base-points)
+            0))]
+    (start-updating-and-drawing-frames)))
